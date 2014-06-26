@@ -37,7 +37,7 @@ object RelateTests {
   				commaSeparated("nums", nums.size)
   				}.on { implicit stmt => 
           	ints("nums",nums)
-  					}.executeQuery().asList(RowParser {row => 
+  					}.asList(RowParser {row => 
   						row.int("col14")
   					})
   			}
@@ -50,7 +50,7 @@ object RelateTests {
           commaSeparated("nums", nums.size)
           }.on { implicit stmt => 
               longs("nums",nums)
-            }.executeQuery().asList(RowParser { row => 
+            }.asList(RowParser { row => 
               row.long("col14")
             })
         }
@@ -64,7 +64,7 @@ object RelateTests {
           commaSeparated("nums", nums.size)
           }.on { implicit stmt => 
               strings("nums",nums)
-             }.executeQuery().asList(RowParser { row => 
+             }.asList(RowParser { row => 
               row.string("col14")
             })
         }
@@ -77,7 +77,7 @@ object RelateTests {
           commaSeparated("nums", nums.size)
           }.on { implicit stmt => 
             doubles("nums",nums)
-            }.executeQuery().asList( RowParser {row =>  row.double("col14")
+            }.asList( RowParser {row =>  row.double("col14")
             } )
         }
   }
@@ -89,7 +89,7 @@ object RelateTests {
   				}.on { implicit stmt => 
   						longs("nums",nums)
   					}
-  				.executeQuery().asList( RowParser {row => 
+  				.asList( RowParser {row => 
   							                      row.long("col45")
                                       row.long("col46")
                                       row.long("col47")
@@ -116,7 +116,7 @@ object RelateTests {
           }.on { implicit stmt => 
               ints("nums",nums)
             }
-          .executeQuery().asList( RowParser {row => 
+          .asList( RowParser {row => 
                                       row.int("col45")
                                       row.int("col46")
                                       row.int("col47")
@@ -143,7 +143,7 @@ object RelateTests {
           }.on { implicit stmt => 
               strings("nums",nums)
             }
-          .executeQuery().asList( RowParser {row => 
+          .asList( RowParser {row => 
                                       row.string("col45")
                                       row.string("col46")
                                       row.string("col47")
@@ -170,7 +170,7 @@ object RelateTests {
           }.on { implicit stmt => 
               doubles("nums",numsDouble)
             }
-          .executeQuery().asList( RowParser {row => 
+          .asList( RowParser {row => 
                                       row.long("col45")
                                       row.long("col46")
                                       row.long("col47")
@@ -196,7 +196,7 @@ object RelateTests {
   				commaSeparated("nums", nums.size)
   				}.on { implicit stmt => 
   						ints("nums",nums)
-  					}.executeQuery().asList( RowParser {row => 
+  					}.asList( RowParser {row => 
   						row.int("col1")
               row.int("col2")
               row.int("col3")
@@ -236,7 +236,7 @@ object RelateTests {
           commaSeparated("nums", nums.size)
           }.on { implicit stmt => 
               longs("nums",nums)
-            }.executeQuery().asList( RowParser {row => 
+            }.asList( RowParser {row => 
               row.long("col1")
               row.long("col2")
               row.long("col3")
@@ -275,7 +275,7 @@ object RelateTests {
           commaSeparated("nums", nums.size)
           }.on { implicit stmt => 
               strings("nums",nums)
-            }.executeQuery().asList( RowParser {row => 
+            }.asList( RowParser {row => 
               row.string("col1")
               row.string("col2")
               row.string("col3")
@@ -315,7 +315,7 @@ object RelateTests {
           commaSeparated("nums", nums.size)
           }.on { implicit stmt => 
               doubles("nums",nums)
-            }.executeQuery().asList( RowParser {row => 
+            }.asList( RowParser {row => 
               row.double("col1")
               row.double("col2")
               row.double("col3")

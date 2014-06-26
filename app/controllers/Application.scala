@@ -23,13 +23,16 @@ object Application extends Controller {
 	//Test.test2()
 
 	changeType("ins_10","text")
-	Ok(views.html.test1(Test.test8()))
+	//doesn't compile
+	//Ok(views.html.test1(Test.test8()))
+	Ok(views.html.index("Testing is DOne"))
+	
 	}
 
 	def changeType(table:String,type1:String) = {
 		val count = DB.withConnection { implicit connection =>
 		RelateSQL("SELECT count(*) AS cnt FROM information_schema.columns WHERE table_name = '"+table+"'")
-		.executeQuery().asSingle(com.lucidchart.open.relate.RowParser.int("cnt"))
+		.asSingle(com.lucidchart.open.relate.RowParser.int("cnt"))
 		}
 		println(count)
 		var i = 1
