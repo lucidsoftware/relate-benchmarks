@@ -16,6 +16,10 @@ object Test {
 				
 			}
 
+      (1 to 10).foreach { t =>
+        Application.time("Relate (interp): Select 1 column from "+nums.size.toString+" records") { RelateInterpTests.select1_int(nums) }
+      }
+
 			(1 to 10).foreach { t =>
 				Application.time("Anorm 2.1.1: Select 1 column from "+nums.size.toString+" records") { AnormTests.select1_int(nums.mkString(",")) }
 				
@@ -31,6 +35,10 @@ object Test {
 				
 			}
 
+      (1 to 10).foreach { t =>
+        Application.time("Relate (interp): Select 10 columns from "+nums.size.toString+" records") { RelateInterpTests.select2_int(nums) }
+      }
+
 			(1 to 10).foreach { t =>
 				Application.time("Anorm 2.1.1: Select 10 columns from "+nums.size.toString+" records") { AnormTests.select2_int(nums.mkString(",")) }
 				
@@ -45,6 +53,11 @@ object Test {
 				Application.time("Relate: Select 25 columns from "+nums.size.toString+" records") { RelateTests.select3_int(nums) }
 				
 			}
+
+      (1 to 10).foreach { t =>
+        Application.time("Relate (interp): Select 25 columns from "+nums.size.toString+" records") { RelateInterpTests.select3_int(nums) }
+
+      }
 
 			(1 to 10).foreach { t =>
 				Application.time("Anorm 2.1.1: Select 25 columns from "+nums.size.toString+" records") { AnormTests.select3_int(nums.mkString(",")) }
@@ -67,6 +80,11 @@ object Test {
 				
 			}
 
+      (1 to 10).foreach { t =>
+        Application.time("Relate (interp): Insert 10 columns , "+nums.size.toString +" records") { RelateInterpTests.insert1_int(nums) }
+
+      }
+
 			(1 to 10).foreach { t =>
 				Application.time("Anorm 2.1.1: Insert 10 columns , "+nums.size.toString +" records") { AnormTests.insert1_int(nums) }
 				
@@ -83,6 +101,11 @@ object Test {
 				
 			}
 
+      (1 to 10).foreach { t =>
+        Application.time("Relate (interp): Insert 50 columns , "+nums.size.toString +" records") { RelateInterpTests.insert2_int(nums) }
+
+      }
+
 			(1 to 10).foreach { t =>
 				Application.time("Anorm 2.1.1: Insert 50 columns , "+nums.size.toString +" records") { AnormTests.insert2_int(nums) }
 				
@@ -97,6 +120,11 @@ object Test {
 				Application.time("Relate: Insert 50 columns , "+nums.size.toString+" records") { RelateTests.insert3_int(nums) }
 				
 			}
+
+      (1 to 10).foreach { t =>
+        Application.time("Relate (interp): Insert 50 columns , "+nums.size.toString+" records") { RelateInterpTests.insert3_int(nums) }
+
+      }
 
 			 (1 to 10).foreach { t =>
 				Application.time("Anorm 2.1.1: Insert 50 columns , "+nums.size.toString+" records") { AnormTests.insert3_int(nums) }
@@ -119,6 +147,11 @@ object Test {
 				
 			}
 
+      (1 to 10).foreach { t =>
+        Application.time("Relate (interp): Update 2 columns , "+nums.size.toString +" records") { RelateInterpTests.update1_int(nums) }
+
+      }
+
 			(1 to 10).foreach { t =>
 				Application.time("Anorm 2.1.1: Update 2 columns , "+nums.size.toString +" records") { AnormTests.update1_int(nums.mkString(",")) }
 				
@@ -134,6 +167,11 @@ object Test {
 				
 			}
 
+      (1 to 10).foreach { t=>
+        Application.time("Relate (interp): Update 10 columns , "+nums.size.toString +" records") { RelateInterpTests.update2_int(nums) }
+
+      }
+
 			(1 to 10).foreach { t=>
 				Application.time("Anorm 2.1.1: Update 10 columns , "+nums.size.toString +" records") { AnormTests.update2_int(nums.mkString(",")) }
 				
@@ -148,6 +186,11 @@ object Test {
 				Application.time("Relate: Update 20 columns , "+nums.size.toString+" records") { RelateTests.update3_int(nums) }
 				
 			}
+
+      (1 to 10).foreach { t =>
+        Application.time("Relate (interp): Update 20 columns , "+nums.size.toString+" records") { RelateInterpTests.update3_int(nums) }
+
+      }
 
 			(1 to 10).foreach { t =>
 				Application.time("Anorm 2.1.1: Update 20 columns , "+nums.size.toString+" records") { AnormTests.update3_int(nums.mkString(",")) }
